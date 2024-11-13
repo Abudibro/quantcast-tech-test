@@ -14,13 +14,13 @@ const parseArguments = (args) => {
 }
 
 const validateFile = (file) => {
-    if (file === null || typeof file != 'string') return 'Wrong file format';
+    if (file === null || typeof file != 'string') return 'File input is incorrect';
     else if (!fs.existsSync(file)) return 'File doesn\'t exist';
     else if (path.extname(file).toLowerCase() != '.csv') return 'File extension must be .csv';
 }
 
 const validateDate = (date) => {
-    if (date == null || typeof date !== 'string') return 'Date input is null';
+    if (date == null || typeof date !== 'string') return 'Date input is incorrect';
 
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
     if (!dateRegex.test(date)) return 'Wrong date format';
