@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { parseArguments, validateFile, validateDate } = require('../src/utils')
+const { parseArguments, validateFile, validateDate } = require('../../src/utils')
 
 jest.mock('fs');
 
