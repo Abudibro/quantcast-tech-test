@@ -1,0 +1,20 @@
+{
+  "name": "quantcast-tech-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "most-active-cookie": "node src/index.js",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "jest": "^29.7.0",
+    "path": "^0.12.7"
+  }
+}
