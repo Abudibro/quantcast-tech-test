@@ -59,6 +59,14 @@ Each line contains a cookie identifier followed by a timestamp, separated by a c
 
 The script will print the most active cookie(s) for the given date to the console. For example, running the following:
 
+## Testing
+
+To run the unit tests simply run the following command:
+
+```
+npm test
+```
+
 ## Troubleshooting
 
 If a mistake has been made in the command I have added a few logs to help catch and resolve the issue
