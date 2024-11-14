@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { parseArguments, validateFile, validateDate } = require('../../src/utils')
+const { parseArguments, validateFile, validateDate } = require('../src/utils')
 
 jest.mock('fs');
 
@@ -53,11 +53,11 @@ describe('utils.js', () => {
 
     describe('validateFile', () => {
         it('should return "Wrong file format" if file is null', () => {
-            expect(validateFile(null)).toBe('Wrong file format');
+            expect(validateFile(null)).toBe('File input is incorrect');
         });
     
         it('should return "Wrong file format" if file is not a string', () => {
-            expect(validateFile(123)).toBe('Wrong file format');
+            expect(validateFile(123)).toBe('File input is incorrect');
         });
     
         it('should return "File doesn\'t exist" if file does not exist', () => {
@@ -78,11 +78,11 @@ describe('utils.js', () => {
 
     describe('validateDate', () => {
         it('should return "Date input is null" if date is null', () => {
-            expect(validateDate(null)).toBe('Date input is null');
+            expect(validateDate(null)).toBe('Date input is incorrect');
         });
     
         it('should return "Date input is null" if date is not a string', () => {
-            expect(validateDate(20220101)).toBe('Date input is null');
+            expect(validateDate(20220101)).toBe('Date input is incorrect');
         });
     
         it('should return "Wrong date format" if date does not match YYYY-MM-DD format', () => {

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { findMostActiveCookie } = require('../../src/mostActiveCookie');
+const { findMostActiveCookie } = require('../src/mostActiveCookie');
 
 jest.mock('fs');
 
