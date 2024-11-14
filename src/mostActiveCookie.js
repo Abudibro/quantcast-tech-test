@@ -9,16 +9,16 @@ const findMostActiveCookie = (file, date) => {
     data.forEach((line, i) => {
         if (i == 0 && line === 'cookie,timestamp') return;
 
-        try {
-            const [cookie, timestamp] = line.split(',');
-            const logDate = timestamp.split('T')[0];
+        const parts = line.trim().split(',');
+        if (parts.length !== 2) return;
 
-            if (logDate === date) cookies.set(cookie, (cookies.get(cookie) || 0) + 1);
-            maxCount = Math.max(maxCount, cookies.get(cookie) || 0);
-        }
-        catch {
-            return;
-        }
+        const [cookie, timestamp] = parts;
+        if (!cookie || !timestamp) return;
+
+        const logDate = timestamp?.split('T')[0];
+
+        if (logDate === date) cookies.set(cookie, (cookies.get(cookie) || 0) + 1);
+        maxCount = Math.max(maxCount, cookies.get(cookie) || 0);
     });
 
     const mostActiveCookies = [...cookies.keys()].filter(cookie => cookies.get(cookie) === maxCount);
